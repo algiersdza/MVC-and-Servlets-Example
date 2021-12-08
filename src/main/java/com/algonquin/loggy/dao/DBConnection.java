@@ -10,45 +10,45 @@ public class DBConnection {
     // CREATE DATABASE loggy DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
     // CREATE TABLE logs (uuid CHAR(40) NOT NULL PRIMARY KEY, title CHAR(128),
     // content TEXT, createTimestamp Date);
+    // content TEXT, createTimestamp Date);
 
-    public static Connection getConnectionToDatabase() {
-        Connection connection = null;
+//MYSQL dependent.
+//user:root
+//pass:CST2355Database
+//CREATE SCHEMA if not exists loggy;
+//    CREATE TABLE `log`(
+//            `UuID` VARCHAR(40) COLLATE utf8_unicode_ci NOT NULL,
+//    `Title` VARCHAR(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+//    `Content` VARCHAR (120) COLLATE utf8_unicode_ci,
+//    `CreateTimestamp` VARCHAR(40) DEFAULT NULL,
+//    `FileType` VARCHAR(64) DEFAULT NULL,
+//    PRIMARY KEY (`UuID`))
+//    ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+//
+//    INSERT INTO loggy.log (UuID,Title,Content,CreateTimestamp,FileType)
+//    VALUES ('aaaaaaaa-bbbb-cccc-dddd-111111111111', 'Initial submission','This is my first submission to the thread,
+//    its a really nice assignment!',NULL,
+//    'Initial Submission.txt');
 
-        System.out.println("getConnectionToDatabase.");
 
-        try {
-            // db settings
-            String dbName = "loggy";
-            String dbUser = "root";
-            String dbPassword = "";
+    private static Connection singleCon = null;
+    //    private static boolean initialized = false;
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/user?useSSL=false";
+    private static final String jdbcUsername = "root";
+    private static final String jdbcPassword = "CST2355Database";
+    private DBConnection(){}
 
-            // load the driver class
+
+    public static Connection getSingleCon() {
+        try{
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("MySQL JDBC Driver Registered!");
+//            initialized = true;
+            singleCon = DriverManager.getConnection(jdbcURL,jdbcUsername,jdbcPassword);
 
-            // get hold of the DriverManager
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + dbName
-                    + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-                    dbUser, dbPassword);
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("Where is your MySQL JDBC Driver?");
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-
         }
-
-        catch (SQLException e) {
-            System.out.println("Connection Failed! Check output console");
-            e.printStackTrace();
-
-        }
-
-        if (connection != null) {
-            System.out.println("Connection made to DB!");
-
-        }
-
-        return connection;
+        return singleCon;
     }
 
 }

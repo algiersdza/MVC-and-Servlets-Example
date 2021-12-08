@@ -1,78 +1,110 @@
 package com.algonquin.loggy.beans;
 
-import java.util.Date;
 import java.util.UUID;
 
-public abstract class Log {
-    private UUID id;
+public class Log {
+
+    private String uuid;
     private String title;
     private String content;
-    private Date createTimestamp;
+    private String createTimestamp;
+    private String fileType;
 
-    public Log() {
-    }
-
-    public Log(String title, String content) {
-        this.id = UUID.randomUUID();
+    public Log(String dummyUuid, String title, String content, String createTimestamp, String fileType) {
+        this.uuid = dummyUuid;
         this.title = title;
         this.content = content;
-        this.createTimestamp = new Date();
+        this.createTimestamp = createTimestamp;
+        this.fileType = fileType;
     }
 
-    /**
-     * @return the id
-     */
-    public UUID getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the title
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * @return the content
-     */
     public String getContent() {
         return content;
     }
 
-    /**
-     * @param content the content to set
-     */
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    /**
-     * @return the createTimestamp
-     */
-    public Date getCreateTimestamp() {
+    public String getCreateTimestamp() {
         return createTimestamp;
     }
 
-    /**
-     * @param createTimestamp the createTimestamp to set
-     */
-    public void setCreateTimestamp(Date createTimestamp) {
-        this.createTimestamp = createTimestamp;
+    public String getFileType() {
+        return fileType;
     }
+
+    public Log() {
+    }
+
+//    public Log(Character uuid,String title, String content, Date createTimestamp) {
+//        this.uuid = uuid;
+//        this.title = title;
+//        this.content = content;
+//        this.createTimestamp = createTimestamp;
+//    }
+
+
+
+
+//    /**
+//     * @return the id
+//     */
+//    public UUID getId() {
+//        return id;
+//    }
+//
+//    /**
+//     * @param id the id to set
+//     */
+//    public void setId(UUID id) {
+//        this.id = id;
+//    }
+//
+//    /**
+//     * @return the title
+//     */
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    /**
+//     * @param title the title to set
+//     */
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    /**
+//     * @return the content
+//     */
+//    public String getContent() {
+//        return content;
+//    }
+//
+//    /**
+//     * @param content the content to set
+//     */
+//    public void setContent(String content) {
+//        this.content = content;
+//    }
+//
+//    /**
+//     * @return the createTimestamp
+//     */
+//    public Date getCreateTimestamp() {
+//        return createTimestamp;
+//    }
+//
+//    /**
+//     * @param createTimestamp the createTimestamp to set
+//     */
+//    public void setCreateTimestamp(Date createTimestamp) {
+//        this.createTimestamp = createTimestamp;
+//    }
 
 }
