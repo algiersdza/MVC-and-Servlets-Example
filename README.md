@@ -15,13 +15,13 @@ jsp and taglib dependacies within the lib directory. taglibs helps with renderin
 jsp files to assist in retrieving and displaying values.
 
 ## user-page-logger.jsp
-![Alt text](https://gyazo.com/4b85a9441a8c7068bfb06b4f3419c3f6 "Add, edit and delete logs")
+![user page example](https://user-images.githubusercontent.com/81432643/145195440-56364262-8074-4a6a-a43c-708a0dae3fba.png)
 
 ## log-edit-page.jsp
-![Alt text](https://gyazo.com/da106582a25505c88ae1974d26528c93 "The actual editing page")
+![edit page example](https://user-images.githubusercontent.com/81432643/145195559-ff88a7d9-63c6-4bb6-808e-153d383971a0.png)
 
 ## Uploading files
 No actual file gets uploaded but is mocked by selecting from the dropdown menu. 
 Name of title gets added to the file format and saved in a string within the database.
 
-![Alt text](https://gyazo.com/0adba624647fa9f00582dd4119fe7b14 "Code snippet")
+![fileattached snippet](https://user-images.githubusercontent.com/81432643/145195639-6919dc21-ffad-4f88-935d-9437044d6d5d.png)
