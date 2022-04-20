@@ -1,4 +1,4 @@
-# Lab 6
+# MVC, Servlets+JSP example JAVA
 
 ## Scenario
 
