@@ -1,4 +1,4 @@
-### Assignment 6 OOP with Design Patterns
+### MVC Design Pattern Example
 
 Challenges:
 - MYSQL has to be on and connected else will return null pointer exception
