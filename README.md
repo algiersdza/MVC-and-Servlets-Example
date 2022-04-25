@@ -1,5 +1,9 @@
 # MVC, Servlets+JSP example JAVA
 
+
+Final product in branch 0.95
+
+
 ## Scenario
 
 Code&Code is a small company dedicated to Software Development. Their engineering team, to which you belong, is working on writing a Web Application as an MVP for a new customer.
